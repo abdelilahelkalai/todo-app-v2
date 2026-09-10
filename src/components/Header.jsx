@@ -1,12 +1,11 @@
 export function Header({ todos }) {
-  const todosLength = todos.length;
-  const isTasksPlural = todosLength != 1;
-  const taskOrTasks = isTasksPlural ? "tasks" : "task";
+  const openTaskCount = todos.filter((todo) => !todo.complete).length;
+  const taskOrTasks = openTaskCount === 1 ? "task" : "tasks";
 
   return (
     <header>
       <h1 className="text-gradient">
-        You have {todosLength} open {taskOrTasks}.
+        You have {openTaskCount} open {taskOrTasks}.
       </h1>
     </header>
   );
