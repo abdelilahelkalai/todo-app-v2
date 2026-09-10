@@ -1,5 +1,3 @@
-export function TodoInput () {
-    return(
-        <div></div>
-    )
+export function TodoInput() {
+  return <div></div>;
 }
