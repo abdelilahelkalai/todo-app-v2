@@ -151,3 +151,26 @@ hr {
     gap: 1rem;
   }
 }
+
+.tab-button[aria-pressed="true"] {
+  border-bottom: 2px solid var(--color-link);
+}
+
+.todo-item[data-complete="true"] > p {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.todo-item p {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.todo-buttons,
+.input-container {
+  flex-wrap: wrap;
+}
+
+.todo-item form {
+  width: 100%;
+}

@@ -1,4 +1,4 @@
-export function Tabs({ todos, selectedTab }) {
+export function Tabs({ todos, selectedTab, onSelectTab }) {
   const tabs = ["All", "Open", "Completed"];
   const completedCount = todos.filter((todo) => todo.complete).length;
   const taskCounts = {
@@ -12,7 +12,8 @@ export function Tabs({ todos, selectedTab }) {
       {tabs.map((tab) => (
         <button
           key={tab}
-          className={`tab-button${selectedTab === tab ? " tab-selected" : ""}`}
+          onClick={() => onSelectTab(tab)}
+          className="tab-button"
           aria-pressed={selectedTab === tab}
         >
           <h4>
