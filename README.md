@@ -1,16 +1,48 @@
-# React + Vite
+# Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and polished todo app built with **React** and **Vite**.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Add, edit, mark as done/undone, and delete tasks
+- Filter tasks with tabs: **All**, **Open**, and **Completed**, each showing its task count
+- Live counter of open tasks in the header
+- Tasks are saved to `localStorage` so they persist across page reloads
+- Empty states and accessible labels when a list has no tasks
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [React 19](https://react.dev)
+- [Vite](https://vite.dev)
+- [Font Awesome](https://fontawesome.com) icons
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── components/
+│   ├── Header.jsx      # Open-task counter
+│   ├── Tabs.jsx        # All / Open / Completed filter tabs
+│   ├── TodoCard.jsx    # Single task with Done, Edit, and Delete actions
+│   ├── TodoInput.jsx   # Form to add new tasks
+│   └── TodoList.jsx    # Filters and renders the list of TodoCard items
+└── App.jsx             # State management + localStorage sync
+```
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Open the URL printed in your terminal (default: `http://localhost:5173`).
+
+## Available Scripts
+
+| Command         | Description                |
+| --------------- | -------------------------- |
+| `npm run dev`   | Start the dev server       |
+| `npm run build` | Build for production       |
+| `npm run preview` | Preview the production build |
+| `npm run lint`  | Run ESLint                 |
